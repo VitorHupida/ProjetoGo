@@ -1,38 +1,21 @@
 package router
 
 import (
-	"net/http"
-
+	"github.com/VitorHupida/ProjetoGo/handler"
 	"github.com/gin-gonic/gin"
 )
 
 func inicilizandoRotas(router *gin.Engine) {
 	v1 := router.Group("/api/v1")
 	{
-		v1.GET("/opening", func(ctx *gin.Context) {
-			ctx.JSON(http.StatusOK, gin.H{
-				"msg": "GET Opening",
-			})
-		})
-		v1.POST("/opening", func(ctx *gin.Context) {
-			ctx.JSON(http.StatusOK, gin.H{
-				"msg": "POST Opening",
-			})
-		})
-		v1.DELETE("/opening", func(ctx *gin.Context) {
-			ctx.JSON(http.StatusOK, gin.H{
-				"msg": "DELETE Opening",
-			})
-		})
-		v1.PUT("/opening", func(ctx *gin.Context) {
-			ctx.JSON(http.StatusOK, gin.H{
-				"msg": "PUT Opening",
-			})
-		})
-		v1.GET("/openings", func(ctx *gin.Context) {
-			ctx.JSON(http.StatusOK, gin.H{
-				"msg": "GET Openings	",
-			})
-		})
+		v1.GET("/opening", handler.VeHandler)
+
+		v1.POST("/opening", handler.CriaHandler)
+
+		v1.DELETE("/opening", handler.DeletaHandler)
+
+		v1.PUT("/opening", handler.AtualizaHandler)
+
+		v1.GET("/openings", handler.ListaHandler)
 	}
 }
