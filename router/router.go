@@ -5,9 +5,9 @@ import "github.com/gin-gonic/gin"
 func Inicializador() {
 	println()
 	//inicializa o roteador utilizando as configurações default do GIN
-	router := gin.Default()
+	rota := gin.Default()
 	//define uma rota
-	inicilizandoRotas(router)
+	inicilizandoRotas(rota)
 	//roda a API
-	router.Run(":8080")
+	rota.Run(":8080")
 }

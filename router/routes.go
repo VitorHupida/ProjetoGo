@@ -5,8 +5,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func inicilizandoRotas(router *gin.Engine) {
-	v1 := router.Group("/api/v1")
+func inicilizandoRotas(rota *gin.Engine) {
+	v1 := rota.Group("/api/v1")
 	{
 		v1.GET("/opening", handler.VeHandler)
 
