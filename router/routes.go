@@ -6,6 +6,9 @@ import (
 )
 
 func inicilizandoRotas(rota *gin.Engine) {
+	//Inicializa handler
+	handler.IniciaHandler()
+
 	v1 := rota.Group("/api/v1")
 	{
 		v1.GET("/opening", handler.VeHandler)
